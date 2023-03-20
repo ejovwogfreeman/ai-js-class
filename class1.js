@@ -143,14 +143,14 @@ let sentence = "Hello today is a beautiful day";
 // name is equal to last letter of surname it
 // should print good job on your console.
 
-let name = prompt("What is your name?");
-let surName = prompt("What is your surname?");
+// let name = prompt("What is your name?");
+// let surName = prompt("What is your surname?");
 
-if (name[name.length - 1] === surName[surName.length - 1]) {
-  console.log("Good Job!!!");
-} else {
-  alert("Condition not met");
-}
+// if (name[name.length - 1] === surName[surName.length - 1]) {
+//   console.log("Good Job!!!");
+// } else {
+//   alert("Condition not met");
+// }
 
 // your assignment:
 // wirte a program that will take a user input of a number
@@ -159,3 +159,48 @@ if (name[name.length - 1] === surName[surName.length - 1]) {
 // e.g when a user enters 11 it will alert 2
 // e.g when a user enters 555 it will alert 15
 // e.g when a user enters 3256 it will alert 16
+
+// let number = prompt("please enter a number");
+// let numberArr = number.split("");
+
+// let acc = 0;
+// for (let i = 0; i < numberArr.length; i++) {
+//   acc += Number(numberArr[i]);
+// }
+// console.log(acc);
+
+// ARRAYS
+// var names = ["faith", "jb", "profit"];
+// var arr = [
+//   "godbless",
+//   true,
+//   30,
+//   "emmanuel",
+//   { surname: "ejovwo" },
+//   [10, 20, 30],
+// ];
+// console.log(arr[5][2]);
+
+// Array properties
+// let names = ["godbless", "freeman", "elon", "bill", "steve"];
+// // push adds to the end of an array
+// names.push("profit", "precious", "phieght");
+// // pop removes from the end of an array
+// names.pop();
+// names.pop();
+// // unshift adds to the beginning of an array
+// names.unshift("jb");
+// // shifts removes from the beginning of an array
+// names.shift();
+// console.log(names.splice(0, 3));
+// console.log(names.slice(0, 3));
+// slice can repalce any element on any osition in an array
+// names.splice(2, 1, "Zuckeberg");
+// console.log(names);
+
+// for (let i = 1; i <= 100; i++) {
+//   console.log(i, "i am sorry");
+// }
+// assignment
+// write code to add the element of an array
+// e.g [20,10,30] will print 60
