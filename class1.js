@@ -110,7 +110,7 @@
 // substring(start, end)
 // substr(start, length)
 
-let sentence = "Hello today is a beautiful day";
+// let sentence = "Hello today is a beautiful day";
 
 // to get today using all three methods
 // console.log(sentence.slice(6, 11));
@@ -198,9 +198,177 @@ let sentence = "Hello today is a beautiful day";
 // names.splice(2, 1, "Zuckeberg");
 // console.log(names);
 
-// for (let i = 1; i <= 100; i++) {
-//   console.log(i, "i am sorry");
+// for (let i = 1; i <= 10; i++) {
+//   console.log(i);
 // }
+
 // assignment
 // write code to add the element of an array
 // e.g [20,10,30] will print 60
+
+let num = [20, 10, 30, 33.3];
+
+// let acc = 0;
+// for (let i = 0; i < num.length; i++) {
+//   acc += num[i];
+// }
+// console.log(acc);
+
+// break and continue
+
+// print even numbers
+// for (let i = 1; i <= 10; i++) {
+//   if (i % 2 === 0) {
+//     console.log(i);
+//   }
+// }
+
+// break
+// for (let i = 1; i <= 10; i++) {
+//   if (i === 5) {
+//     break;
+//   }
+//   console.log(i);
+// }
+
+// continue
+// for (let i = 1; i <= 10; i++) {
+//   if (i === 5) {
+//     continue;
+//   }
+//   console.log(i);
+// }
+
+// while
+
+// while(condition){
+//     codeblock;
+//     increment
+// }
+
+// let i = 1;
+
+// while (i <= 10) {
+//   console.log(i);
+//   i++;
+// }
+
+// console.log(num.sort((a, b) => b - a));
+
+// forEach
+// num.forEach((x) => console.log(x));
+
+// map
+// num.map((x) => console.log(x));
+
+// let days = ["sunday", "monday", "tuesday"];
+// let hour = new Date().getHours();
+// if (hour > 0 && hour < 12) {
+//   console.log("good morning");
+// } else if (hour >= 12 && hour < 16) {
+//   console.log("good afternoon");
+// } else if (hour >= 16 && hour < 21) {
+//   console.log("good evening");
+// } else {
+//   console.log("good night");
+// }
+
+// for (let i = 0; i < days.length; i++) {
+//   if (date === i) {
+//     console.log(days[i]);
+//   }
+// }
+
+// let names = ["gb", "fm", "lc"];
+
+// let person = {
+//   name: "gb",
+//   age: 75,
+//   isMarried: true,
+// };
+
+// console.log(names);
+// console.log(person);
+
+// var name = prompt("please enter your");
+
+// if (name) {
+//   alert(name + " you are welcome");
+// } else {
+//   while (name === "") {
+//     name = prompt("you must enter a name");
+//     if (name) {
+//       alert(name + " you are welcome");
+//     }
+//   }
+// }
+
+// if (name === "") {
+//   name = prompt("you must enter a name");
+//   alert(name + " you are welcome");
+// } else {
+// }
+
+// class work
+
+// const company = [
+//   {
+//     id: 1,
+//     name: "google",
+//     staffs: 23,
+//     startYear: 1974,
+//     isTech: true,
+//   },
+//   {
+//     id: 2,
+//     name: "facebook",
+//     staffs: 13,
+//     startYear: 2004,
+//     isTech: true,
+//   },
+//   {
+//     id: 3,
+//     name: "gucci",
+//     staffs: 37,
+//     startYear: 1990,
+//     isTech: false,
+//   },
+//   {
+//     id: 4,
+//     name: "amazon",
+//     staffs: 15,
+//     startYear: 1996,
+//     isTech: true,
+//   },
+//   {
+//     id: 5,
+//     name: "microsoft",
+//     staffs: 25,
+//     startYear: 1975,
+//     isTech: true,
+//   },
+//   {
+//     id: 6,
+//     name: "starlink",
+//     staffs: 29,
+//     startYear: 1999,
+//     isTech: true,
+//   },
+//   {
+//     id: 7,
+//     name: "Nadia",
+//     staffs: 30,
+//     startYear: 2005,
+//     isTech: false,
+//   },
+// ];
+
+// console.log(company);
+
+// questions
+// 1) return only the tech companies
+// 2) claculate the total number of staffs in all the companies
+// 3) return companies the starts before 2000
+// 4) retrun the sum of staffs in the comapny with the highest number of staffs and the lowest of staffs
+// 5) retrun the number of staffs in the oldest and the youngest company
+// 7) return the companies with number of staffs greater than 30
