@@ -371,4 +371,356 @@ let num = [20, 10, 30, 33.3];
 // 3) return companies the starts before 2000
 // 4) retrun the sum of staffs in the comapny with the highest number of staffs and the lowest of staffs
 // 5) retrun the number of staffs in the oldest and the youngest company
-// 7) return the companies with number of staffs greater than 30
+// 6) return the companies with number of staffs greater than 30
+
+// answer 1
+// for (let i = 0; i < company.length; i++) {
+//   if (company[i].isTech === true) {
+//     console.log(company[i]);
+//   }
+// }
+
+// answer 2
+// let staffs = [];
+// for (let i = 0; i < company.length; i++) {
+//   staffs.push(company[i].staffs);
+// }
+// let acc = 0;
+// for (let i = 0; i < staffs.length; i++) {
+//   acc = acc + staffs[i];
+// }
+// console.log(acc);
+
+// answer 3
+// for (let i = 0; i < company.length; i++) {
+//   if (company[i].startYear < 2000) {
+//     console.log(company[i]);
+//   }
+// }
+
+// answer 4
+// let staffs = [];
+// for (let i = 0; i < company.length; i++) {
+//   staffs.push(company[i].staffs);
+// }
+
+// staffs.sort();
+// console.log(staffs[0] + staffs.pop());
+// or;
+// console.log(staffs[0] + staffs[staffs.length - 1]);
+
+// answer 5
+// let year = [];
+// for (let i = 0; i < company.length; i++) {
+//   year.push(company[i].startYear);
+// }
+// year.sort();
+// let youngest = year.pop();
+// let oldest = year[0];
+
+// for (let i = 0; i < company.length; i++) {
+//   if (company[i].startYear === youngest) {
+//     console.log(
+//       `the number of staffs in the youngest compnay is ${company[i].staffs}`
+//     );
+//   } else if (company[i].startYear === oldest) {
+//     console.log(
+//       `the number of staffs in the oldest compnay is ${company[i].staffs}`
+//     );
+//   }
+// }
+
+// answer 6
+// for (let i = 0; i < company.length; i++) {
+//   if (company[i].staffs > 30) {
+//     console.log(company[i]);
+//   }
+// }
+
+// js objects
+
+// let person = {
+//   name: "Prekipre",
+//   height: "4ft",
+//   age: 19,
+//   isStudent: true,
+//   isAdmin: false,
+//   children: null,
+//   hobbies: ["coding", "sleeping", "eating"],
+//   address: {
+//     street: "24th street BDPA",
+//     city: "Benin City",
+//     state: "Edo State",
+//     country: "Nethrlands",
+//   },
+//   contact: {
+//     phNum: ["+234", "+335", "+419"],
+//     email: "pre@gmail.com",
+//     facebook: "Pearl Prechi",
+//   },
+// };
+
+// console.log(person);
+// accessing the elements of an objects
+
+// console.log(person["address"]["country"]);
+
+// console.log(person.hobbies[2]);
+
+// const person = {
+//   firstName: "Godbless",
+//   lastName: "Ejovwo",
+//   age: 75,
+//   fullName: function () {
+//     return this.firstName + " " + this.lastName;
+//   },
+//   greet: function () {
+//     return "Good morning, thanks for checking on me, gracias!";
+//   },
+// };
+
+// console.log(person.me());
+
+// let names = ["gb", "fm", "lc"];
+
+// let names = new Array("gb", "fm", "lc");
+
+// let names = ["gb", "fm", "lc"];
+
+// console.log(Array.isArray(names));
+
+// javascript functions
+
+// // fucntions without parameters
+// function functionName() {
+//   codeblock;
+// }
+
+// // functions with parameters
+// function functionName(parameter1, parameter2) {
+//   codeblock;
+// }
+
+// function greet() {
+//   console.log("hello world");
+// }
+
+// function greet() {
+//   return "Hello world";
+// }
+
+// function greet(name, time) {
+//   return `Good ${time} ${name} How are you`;
+// }
+
+// function greet(name = "godbless", time = "evening") {
+//   return `Good ${time} ${name} How are you`;
+// }
+// console.log(greet("freeman", "night"));
+
+// function addNums(num1, num2) {
+//   return num1 + num2;
+// }
+
+// console.log(addNums(2, 4));
+
+// function sumArrayNums(arr) {
+//   let acc = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     acc = acc + arr[i];
+//   }
+//   return acc;
+// }
+
+// console.log(sumArrayNums([20, 10, 33, 28, 77, 999, 10]));
+
+// let ages = [20, 10, 33, 28, 77];
+
+// alert(ages);
+
+// prompt("enter array numbers");
+
+// arrow functions
+
+// const functionName = ()=> {
+//   codeblock
+// }
+
+// const greet = () => {
+//   return "Hello world";
+// };
+
+// const greet = (time, name) => {
+//   return `Good ${time} ${name} welcome to AI tech`;
+// };
+
+// console.log(greet("morning", "Mariana"));
+
+// js Date object and js Math object
+
+// let date = new Date();
+
+// console.log(date);
+
+// console.log(Math.ceil(Math.random() * 100));
+
+//////////////////////////////////////
+//////////small program///////////////
+//////////////////////////////////////
+
+// var rooster = [];
+
+// function addName() {
+//   var name = prompt("please add a name");
+//   rooster.push(name);
+// }
+
+// function removeName() {
+//   var name = prompt("please remove a name");
+//   rooster.splice(rooster.indexOf(name), 1);
+// }
+
+// function displayNames() {
+//   alert(rooster);
+// }
+
+// alert("Welcome to my school");
+// var question = prompt("Would you like to register? y/n");
+// var reply;
+
+// if (question === "y") {
+//   while (reply !== "quit") {
+//     reply = prompt("please add, remove, display or quit");
+//     if (reply === "add") {
+//       addName();
+//     } else if (reply === "remove") {
+//       removeName();
+//     } else if (reply === "display") {
+//       displayNames();
+//     } else if (reply === "quit") {
+//       alert("Thanks for participating, refresh to start again");
+//     } else {
+//       alert("Invalid input");
+//     }
+//   }
+// } else {
+//   alert("Thanks for participating, refresh to start again");
+// }
+
+// object oriented programming
+// function Person(name, surname, email) {
+//   this.name = name;
+//   this.surname = surname;
+//   this.email = email;
+// }
+
+// const person1 = new Person("godbless", "ejovwo", "ejovwogfreeman007@gmail.com");
+
+// console.log(person1);
+
+// read on object oriented programming (OOP);
+// function methods and ES6 classes and prototypes
+
+// function greet(a, b) {
+//   console.log(a % b);
+// }
+// greet(10, 3);
+
+// const person = {
+//   name: "john",
+//   surname: "doe",
+//   email: "john@gmail.com",
+// };
+
+// function Person(name, surname, email) {
+//   this.name = name;
+//   this.surname = surname;
+//   this.email = email;
+// this.greet = function () {
+//   return `Hello, ${this.name}`;
+// };
+// this.addFriend = function () {
+//   return `${this.name} added a friend successfully`;
+// };
+// }
+
+// const person1 = new Person("jonn", "doe", "john@gmail.com");
+// const person2 = new Person("freeman", "mark", "mark@gmail.com");
+
+// console.log(person2.addFriend());
+// console.log(person2);
+
+// class ClassName{
+//   constructor(){
+//   }
+// }
+
+// class Person {
+//   constructor(name, surname, email) {
+//     this.name = name;
+//     this.surname = surname;
+//     this.email = email;
+//   }
+//   greet = function () {
+//     return `welcome ${this.name}`;
+//   };
+// }
+
+// const person1 = new Person("mark", "powell", "markp@gmail.com");
+
+// console.log(person1.greet());
+
+// events and dom
+
+// click, submit, change, mousein, mouseout, mouseover
+
+// dom => document object model
+
+// single element selectors
+// document.getElementById
+// document.querySelector
+
+// multiple element selector
+// document.getElementsByTagName;
+// document.getElementsByClassName;
+// document.querySelectorAll;
+
+// document.getElementById("btn").addEventListener("click", () => {
+//   document.querySelector("body").style.background = "red";
+//   document.querySelector("body").style.color = "white";
+// });
+
+// console.log(document.querySelectorAll("p"));
+
+// document.getElementById("btn").addEventListener("click", () => {
+//   document.querySelector("p").innerHTML =
+//     "<h1>Freeam is the greatest of all time</h1>";
+// });
+
+// const h1 = document.createElement("h1");
+
+// h1.textContent = "My new text from javascript";
+
+// console.log(h1);
+
+// document.querySelector("body").appendChild(h1);
+
+// textContent
+// innerText
+// innerHTML
+
+let html = "";
+
+let text = `
+  <div>
+    <p>lorem ipsum dolor sit amet</p>
+    <p>lorem ipsum dolor sit amet</p>
+    <p>lorem ipsum dolor sit amet</p>
+  </div>
+`;
+
+html += text;
+
+document.querySelector("body").innerHTML = html;
+
+console.log(html);
