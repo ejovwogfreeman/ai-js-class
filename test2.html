@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        text-align: center;
+      }
+      button {
+        font-size: 18px;
+        padding: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="bulboff.gif" alt="" id="bulb" />
+      <div>
+        <button id="btn">on</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let bulb = document.getElementById("bulb");
+    let btn = document.getElementById("btn");
+
+    btn.addEventListener("click", () => {
+      if (btn.textContent === "on") {
+        bulb.src = "bulbon.gif";
+        btn.textContent = "off";
+      } else {
+        bulb.src = "bulboff.gif";
+        btn.textContent = "on";
+      }
+    });
+  </script>
+</html>

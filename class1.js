@@ -709,18 +709,70 @@ let num = [20, 10, 30, 33.3];
 // innerText
 // innerHTML
 
-let html = "";
+// let html = "";
 
-let text = `
-  <div>
-    <p>lorem ipsum dolor sit amet</p>
-    <p>lorem ipsum dolor sit amet</p>
-    <p>lorem ipsum dolor sit amet</p>
-  </div>
-`;
+// let text = `
+//   <div>
+//     <p>lorem ipsum dolor sit amet</p>
+//     <p>lorem ipsum dolor sit amet</p>
+//     <p>lorem ipsum dolor sit amet</p>
+//   </div>
+// `;
 
-html += text;
+// html += text;
 
-document.querySelector("body").innerHTML = html;
+// document.querySelector("body").innerHTML = html;
 
-console.log(html);
+// console.log(html);
+
+// var btn = document.getElementById("btn");
+// var alert = document.getElementById("alert");
+
+// btn.addEventListener("click", () => {
+//   alert.textContent = "Please say something";
+//   alert.style.display = "block";
+//   setTimeout(() => {
+//     alert.style.display = "none";
+//   }, 3000);
+// });
+
+var form = document.getElementById("form");
+var fullName = document.getElementById("fullName");
+var email = document.getElementById("email");
+var alert = document.getElementById("alert");
+let contents = document.querySelector(".contents");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (fullName.value === "" || email.value === "") {
+    alert.textContent = "please fill all fields";
+    alert.style.borderColor = "red";
+    alert.style.color = "red";
+    alert.style.display = "block";
+    setTimeout(() => {
+      alert.style.display = "none";
+    }, 3000);
+    return;
+  }
+  alert.textContent = "added successfully";
+  alert.style.borderColor = "green";
+  alert.style.color = "green";
+  alert.style.display = "block";
+  setTimeout(() => {
+    alert.style.display = "none";
+  }, 3000);
+
+  let html = "";
+
+  contents.innerHTML += `
+    <span>
+      <h2>${fullName.value}</h2>
+      <p>${email.value}</p>
+    </span>
+  `;
+
+  html = contents;
+
+  fullName.value = "";
+  email.value = "";
+});
