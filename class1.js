@@ -762,17 +762,150 @@ form.addEventListener("submit", (e) => {
     alert.style.display = "none";
   }, 3000);
 
-  let html = "";
+  const employee = {
+    id: Math.random(),
+    fullName: fullName.value,
+    email: email.value,
+  };
 
-  contents.innerHTML += `
-    <span>
-      <h2>${fullName.value}</h2>
-      <p>${email.value}</p>
-    </span>
-  `;
+  let localData = JSON.parse(localStorage.getItem("employees"));
+  let employees = [];
 
-  html = contents;
+  if (localData === null) {
+    employees = [];
+  } else {
+    employees = localData;
+  }
+
+  employees.push(employee);
+
+  localStorage.setItem("employees", JSON.stringify(employees));
+
+  getEmployees();
 
   fullName.value = "";
   email.value = "";
 });
+
+function getEmployees() {
+  let localData = JSON.parse(localStorage.getItem("employees"));
+
+  let employees = [];
+
+  if (localData === null) {
+    employees = [];
+  } else {
+    employees = localData;
+  }
+
+  let html = "";
+
+  for (let i = 0; i < employees.length; i++) {
+    html += `
+        <span>
+          <h2>${employees[i].fullName}</h2>
+          <p>${employees[i].email}</p>
+          <button onClick=deteEmployee(${employees[i].id})>DELETE</button>
+        </span>
+      `;
+  }
+
+  contents.innerHTML = html;
+}
+
+getEmployees();
+
+function deteEmployee(id) {
+  let localData = JSON.parse(localStorage.getItem("employees"));
+
+  let employees = [];
+
+  if (localData === null) {
+    employees = [];
+  } else {
+    employees = localData;
+  }
+
+  let newEmployees = employees.filter((x) => x.id !== id);
+
+  localStorage.clear();
+
+  localStorage.setItem("employees", JSON.stringify(newEmployees));
+
+  getEmployees();
+}
+
+// let grades = ["A", "B", "C", "F"];
+
+// console.log(grades);
+// let filteredGrades = grades.filter((x) => x !== "F");
+
+// console.log(filteredGrades);
+
+// http request and method
+
+// get, post, put, patch, delete
+
+// req=> request is an object
+
+// method=> is the way request is made
+
+// promises, async and await
+
+// fetch
+
+// const content = document.querySelector(".contents");
+// const getInfo = async () => {
+//   const res = await fetch("http://localhost:8000/api/blogs");
+//   const data = await res.json();
+//   console.log(data);
+
+//   let html = "";
+
+//   data.forEach((element) => {
+//     html += `
+//       <a href=?id=${element._id}>
+//         <h2>${element.title}</h2>
+//         <p>${element.body}</p>
+//       </a>
+//     `;
+//   });
+
+//   console.log(html);
+//   content.innerHTML = html;
+// };
+
+// getInfo();
+
+// const blog = {
+//   title: "i am a new post",
+//   body: "lorem ipsum dolor sit amet",
+// };
+
+// const postInfo = async (blog) => {
+//   await fetch("http://localhost:8000/api/blogs", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(blog),
+//   });
+// };
+
+// postInfo(blog);
+
+// console.log(window.location.href.split("=")[1]);
+
+// js fetch api
+
+// const getInfo = async () => {
+//   const res = await fetch("http://localhost:8000/api/blogs");
+//   const data = await res.json();
+//   console.log(data);
+// };
+
+// getInfo();
+
+// fetch("http://localhost:8000/api/blogs")
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));

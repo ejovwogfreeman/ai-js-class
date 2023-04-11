@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #alert {
+        border: 1px solid;
+        display: none;
+        padding: 10px;
+        border-radius: 3px;
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+
+      form {
+        width: 500px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      form input {
+        width: 95%;
+        padding: 10px;
+        margin: 0px;
+        outline: none;
+        font-size: 18px;
+      }
+      form button {
+        width: 100%;
+        padding: 10px;
+        margin: 0px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      .contents-container {
+        width: 500px;
+        margin: auto;
+        margin-top: 20px;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      .contents .todo {
+        padding: 10px;
+        display: block;
+        margin-bottom: 10px;
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+
+      .contents .todo:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .contents .todo button {
+        cursor: pointer;
+        font-size: 18px;
+        padding: 5px 10px;
+      }
+
+      .contents h2,
+      .contents p {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="form">
+      <div id="alert"></div>
+      <input type="text" id="todo" placeholder="Please Enter A Todo" />
+      <br />
+      <br />
+      <button>Submit</button>
+    </form>
+    <div class="contents-container">
+      <h1>Todo List</h1>
+      <div class="contents"></div>
+    </div>
+  </body>
+  <script>
+    var form = document.getElementById("form");
+    var todo = document.getElementById("todo");
+    var alert = document.getElementById("alert");
+    let contents = document.querySelector(".contents");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (todo.value === "") {
+        alert.textContent = "Please Enter A Todo";
+        alert.style.borderColor = "red";
+        alert.style.color = "red";
+        alert.style.display = "block";
+        setTimeout(() => {
+          alert.style.display = "none";
+        }, 3000);
+        return;
+      }
+      alert.textContent = "Todo Added Successfully";
+      alert.style.borderColor = "green";
+      alert.style.color = "green";
+      alert.style.display = "block";
+      setTimeout(() => {
+        alert.style.display = "none";
+      }, 3000);
+
+      singleTodo = {
+        id: Math.random(),
+        todo: todo.value,
+      };
+      todo.value = "";
+      let todosArr = JSON.parse(localStorage.getItem("todos"));
+      if (todosArr === null) {
+        todoList = [];
+      } else {
+        todoList = todosArr;
+      }
+      todoList.push(singleTodo);
+      localStorage.setItem("todos", JSON.stringify(todoList));
+      showTodos();
+    });
+
+    function showTodos() {
+      let todosArr = JSON.parse(localStorage.getItem("todos"));
+      if (todosArr === null) {
+        todoList = [];
+      } else {
+        todoList = todosArr;
+      }
+
+      let html = "";
+      todoList.forEach((todo) => {
+        html += `
+            <div class="todo">
+                <h2>${todo.todo}</h2>
+                <div style="margin-top: 10px">
+                    <button onClick="deleteTodo(${todo.id})">delete</button>
+                </div>
+            </div>
+        `;
+      });
+
+      contents.innerHTML = html;
+    }
+    showTodos();
+
+    function deleteTodo(id) {
+      let todosArr = JSON.parse(localStorage.getItem("todos"));
+      if (todosArr === null) {
+        todoList = [];
+      } else {
+        todoList = todosArr;
+      }
+      let newTodos = todoList.filter((todo) => todo.id !== id);
+      localStorage.clear();
+      localStorage.setItem("todos", JSON.stringify(newTodos));
+      showTodos();
+    }
+  </script>
+</html>
